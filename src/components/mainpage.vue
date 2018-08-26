@@ -2,9 +2,8 @@
     <div>
         <el-row>
             <el-col :span="24" class="header">
-                <el-button type="primary" icon="el-icon-edit"></el-button>
                 <router-link class="logo" to='/' tag='div'></router-link>
-                <span>123</span>
+                <el-button  icon="el-icon-edit" size="mini"></el-button>
             </el-col>
         </el-row>
         <el-row class="maincontain">
@@ -40,7 +39,8 @@ export default {
 .header {
   height: 60px;
   background-color: #eee;
-  vertical-align: top;
+  display: flex;
+  align-items: center;
   .logo{
       margin-left: 50px;
       background-image: url('../assets/images/logo.png');
