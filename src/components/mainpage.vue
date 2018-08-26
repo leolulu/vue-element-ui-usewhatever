@@ -2,14 +2,18 @@
     <div>
         <el-row>
             <el-col :span="24" class="header">
-                <div class="logo"></div>
+                <el-button type="primary" icon="el-icon-edit"></el-button>
+                <router-link class="logo" to='/' tag='div'></router-link>
+                <span>123</span>
             </el-col>
         </el-row>
         <el-row class="maincontain">
-                 <el-menu class="aside" background-color="#fef" router>
+                 <el-menu class="aside" background-color="#F9F9F5" router>
                      <el-menu-item :route='item.path' :index="index" v-for='(item,index) in navlist' :key='index'>{{item.name}}</el-menu-item>
                  </el-menu>
-            <div class="main"></div>
+            <div class="main">
+                <router-view></router-view>
+            </div>
         </el-row>
     </div>
 </template>
@@ -36,6 +40,7 @@ export default {
 .header {
   height: 60px;
   background-color: #eee;
+  vertical-align: top;
   .logo{
       margin-left: 50px;
       background-image: url('../assets/images/logo.png');
@@ -44,6 +49,7 @@ export default {
       background-size: 135px 40px;
       background-repeat: no-repeat;
       background-position-y: center;
+      display: inline-block;
   }
 }
 .maincontain {
@@ -57,8 +63,14 @@ export default {
     width: 250px;
   }
   .main {
-    background-color: lightgray;
     flex:1;
+    overflow: hidden;
   }
+}
+@media screen and (max-width:776px) {
+    .aside{
+        display: none;
+    }
+
 }
 </style>

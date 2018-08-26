@@ -12,7 +12,6 @@
 
 <style scoped>
     div{
-        border: 1px dotted green;
         height: 100%;
     }
 </style>
