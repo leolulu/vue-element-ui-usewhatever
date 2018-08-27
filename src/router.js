@@ -11,10 +11,7 @@ export default new Router({
       name: 'mainpage',
       component: mainpage,
       children:[
-        {
-          path:'/module1',
-          component:()=>import('./components/page1.vue')
-        }
+        path:'/'
       ]
     },
     {
